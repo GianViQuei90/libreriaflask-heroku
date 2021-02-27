@@ -1,0 +1,588 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Documentacion de la api de libreria",
+    "version": "1.0",
+    "title": "LibreriaFlask",
+    "termsOfService": "http://www.google.com",
+    "contact": {
+      "name": "giancarlo villalobos",
+      "email": "diesel_120@hotmail.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "127.0.0.1:5000",
+  "basePath": "/",
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/autores": {
+      "get": {
+        "description": "ruta que devuelve todos los autores de la base de datos",
+        "summary": "Devuelve todos los autores",
+        "tags": [
+          "Autor"
+        ],
+        "operationId": "/autores",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "post": {
+        "description": "ruta para agregar un autor",
+        "summary": "/Crea un nuevo autor",
+        "tags": [
+          "Autor"
+        ],
+        "operationId": "Post/autores",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/~1autoresrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/autor/{id}": {
+      "get": {
+        "description": "ruta que devulve un autor segun su id",
+        "summary": "/autor/:id",
+        "tags": [
+          "Autor"
+        ],
+        "operationId": "/autor/:id",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id del autor a buscar",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "put": {
+        "description": "ruta para editar un autor",
+        "summary": "/autor/:id",
+        "tags": [
+          "Autor"
+        ],
+        "operationId": "Put/autor/:id",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id del autor a buscar",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/~1autor~1%3Aidrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "description": "ruta para eliminar un autor segun su id",
+        "summary": "/autor/:id1",
+        "tags": [
+          "Autor"
+        ],
+        "operationId": "/autor/:id1",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id del autor a buscar",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/~1autor~1%3Aidrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/categorias": {
+      "get": {
+        "description": "ruta que devuelve todas las categorias",
+        "summary": "/categorias",
+        "tags": [
+          "Categoria"
+        ],
+        "operationId": "/categorias",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/categoria": {
+      "post": {
+        "summary": "/categoria",
+        "tags": [
+          "Categoria"
+        ],
+        "operationId": "/categoria",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/~1categoriarequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/libros": {
+      "post": {
+        "summary": "{{url_local}}/libro",
+        "tags": [
+          "Libro"
+        ],
+        "operationId": "{{url_local}}/libro",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/%7B%7Burl_local%7D%7D~1libro_request"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "summary": "/libros",
+        "tags": [
+          "Libro"
+        ],
+        "operationId": "/libros",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/buscar": {
+      "get": {
+        "summary": "{{url_buscar}}/buscar?palabra=esperes",
+        "tags": [
+          "Buscar"
+        ],
+        "operationId": "{{url_buscar}}/buscar?palabra=esperes",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "palabra",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/sedes": {
+      "post": {
+        "summary": "{{url_local}}/sedes",
+        "tags": [
+          "Sede"
+        ],
+        "operationId": "{{url_local}}/sedes",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/%7B%7Burl_local%7D%7D~1sedes_request"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "summary": "{{url_local}}/sedes",
+        "tags": [
+          "Sede"
+        ],
+        "operationId": "Get{{url_local}}/sedes",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/sedeLibros/1": {
+      "get": {
+        "summary": "/sedeLibros/:id",
+        "tags": [
+          "Sede"
+        ],
+        "operationId": "/sedeLibros/:id",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/busquedaLibroSedeCat": {
+      "get": {
+        "summary": "{{url_local}}/busquedaLibroSedeCat",
+        "tags": [
+          "Sede"
+        ],
+        "operationId": "{{url_local}}/busquedaLibroSedeCat",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "categoria",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "sede",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/registrarSedesLibro": {
+      "post": {
+        "summary": "{{url_local}}/registrarSedesLibro",
+        "tags": [
+          "Sede"
+        ],
+        "operationId": "{{url_local}}/registrarSedesLibro",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/%7B%7Burl_local%7D%7D~1registrarSedesLibro_Request"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "/autoresrequest": {
+      "title": "/autoresrequest",
+      "type": "object",
+      "properties": {
+        "autor_nombre": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "autor_nombre"
+      ]
+    },
+    "/autor/:idrequest": {
+      "title": "/autor/:idrequest",
+      "type": "object",
+      "properties": {
+        "autor_nombre": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "autor_nombre"
+      ]
+    },
+    "/categoriarequest": {
+      "title": "/categoriarequest",
+      "type": "object",
+      "properties": {
+        "categoria_descripcion": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "categoria_descripcion"
+      ]
+    },
+    "{{url_local}}/libro_request": {
+      "title": "{{url_local}}/libro_request",
+      "type": "object",
+      "properties": {
+        "libro_nombre": {
+          "type": "string"
+        },
+        "libro_cant": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "libro_edicion": {
+          "type": "string"
+        },
+        "autor_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "categoria_id": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "libro_nombre",
+        "libro_cant",
+        "libro_edicion",
+        "autor_id",
+        "categoria_id"
+      ]
+    },
+    "{{url_local}}/sedes_request": {
+      "title": "{{url_local}}/sedes_request",
+      "type": "object",
+      "properties": {
+        "sede_latitud": {
+          "type": "number",
+          "format": "double"
+        },
+        "sede_longitud": {
+          "type": "number",
+          "format": "double"
+        },
+        "sede_ubicacion": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "sede_latitud",
+        "sede_longitud",
+        "sede_ubicacion"
+      ]
+    },
+    "{{url_local}}/registrarSedesLibro_Request": {
+      "title": "{{url_local}}/registrarSedesLibro_Request",
+      "type": "object",
+      "properties": {
+        "libro_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sedes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Sede"
+          }
+        }
+      },
+      "required": [
+        "libro_id",
+        "sedes"
+      ]
+    },
+    "Sede": {
+      "title": "Sede",
+      "type": "object",
+      "properties": {
+        "sede_id": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "sede_id"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "Autor"
+    },
+    {
+      "name": "Categoria"
+    },
+    {
+      "name": "Libro"
+    },
+    {
+      "name": "Buscar"
+    },
+    {
+      "name": "Sede"
+    }
+  ]
+}
