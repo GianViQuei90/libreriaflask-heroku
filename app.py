@@ -25,7 +25,7 @@ swagger_blueprint=get_swaggerui_blueprint(
 app = Flask(__name__)
 app.register_blueprint(swagger_blueprint)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://numjmbfsfzvdbzfp:f4xhk9fzmaayj85s@d6rii63wp64rsfb5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/t7pdjw13yz44k2hq'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://de4el0rj4pwjvs61:xk7wxxqq04z9xn5u@lfmerukkeiac5y5w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/t00bw15eh8442466'
 api = Api(app)
 CORS(app)  
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
